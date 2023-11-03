@@ -1,0 +1,82 @@
+:root {
+  --main-color: grey;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "myheader myheader myheader myheader myheader myheader"
+    "mynav mynav mynav mynav mynav mynav"
+    "mycntleft mymain mymain mymain mymain mycntright"
+    "myfooter myfooter myfooter myfooter myfooter myfooter";
+  height: 100vh;
+  grid-template-rows: 15% 10% 1fr 10%;
+}
+.container > div {
+  background-color: var(--main-color);
+  font-size: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  grid-area: myheader;
+}
+.nav {
+  grid-area: mynav;
+}
+.main {
+  grid-area: mymain;
+}
+.content-left {
+  grid-area: mycntleft;
+}
+.content-right {
+  grid-area: mycntright;
+}
+.footer {
+  grid-area: myfooter;
+}
+/* small screens */
+@media screen and (max-width: 590px) {
+    .container {
+      grid-template-areas:
+        "myheader myheader myheader myheader myheader myheader"
+        "mynav mynav mynav mynav mynav mynav"
+        "mymain mymain mymain mymain mymain mymain"
+        "myfooter myfooter myfooter myfooter myfooter myfooter";
+      grid-template-rows: 15% 10% 1fr 15%;
+      height: 100vh;
+    }
+    .content-left,
+    .content-right {
+      display: none;
+    }
+    .container > div {
+      font-size: 20px;
+    }
+  }
+  
+/* mediuim screens */
+@media screen and (min-width: 591px) and (max-width: 890px) {
+  .container {
+    grid-template-areas:
+      "myheader myheader myheader myheader myheader myheader"
+      "mynav mynav mynav mynav mynav mynav"
+      "mymain mymain mymain mymain mycntright mycntright"
+      "myfooter myfooter myfooter myfooter myfooter myfooter";
+    grid-template-rows: 15% 10% 1fr 15%;
+    height: 100vh;
+  }
+  .content-left {
+    display: none;
+  }
+  .container > div {
+    font-size: 20px;
+  }
+}
