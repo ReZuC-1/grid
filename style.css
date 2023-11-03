@@ -18,6 +18,7 @@
 }
 .container > div {
   background-color: var(--main-color);
+  text-align: center;
   font-size: 30px;
   border-radius: 5px;
   display: flex;
@@ -42,41 +43,36 @@
 .footer {
   grid-area: myfooter;
 }
-/* small screens */
-@media screen and (max-width: 590px) {
+@media (max-width: 576px) { 
     .container {
-      grid-template-areas:
-        "myheader myheader myheader myheader myheader myheader"
-        "mynav mynav mynav mynav mynav mynav"
-        "mymain mymain mymain mymain mymain mymain"
-        "myfooter myfooter myfooter myfooter myfooter myfooter";
-      grid-template-rows: 15% 10% 1fr 15%;
-      height: 100vh;
-    }
-    .content-left,
-    .content-right {
-      display: none;
-    }
-    .container > div {
-      font-size: 20px;
-    }
-  }
-  
-/* mediuim screens */
-@media screen and (min-width: 591px) and (max-width: 890px) {
-  .container {
-    grid-template-areas:
-      "myheader myheader myheader myheader myheader myheader"
-      "mynav mynav mynav mynav mynav mynav"
-      "mymain mymain mymain mymain mycntright mycntright"
-      "myfooter myfooter myfooter myfooter myfooter myfooter";
-    grid-template-rows: 15% 10% 1fr 15%;
-    height: 100vh;
-  }
-  .content-left {
-    display: none;
-  }
-  .container > div {
-    font-size: 20px;
-  }
-}
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+          "myheader myheader myheader myheader myheader myheader"
+          "mynav mynav mynav mynav mynav mynav"
+          "mymain mymain mymain mymain mymain mymain"
+          "myfooter myfooter myfooter myfooter myfooter myfooter";
+        height: 100vh;
+        grid-template-rows: 15% 10% 1fr 10%;
+      }
+      .container .content-left, .container .content-right {
+       display: none;
+      }
+ }
+
+@media (min-width: 577px) and (max-width: 870px) { 
+    .container {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+          "myheader myheader myheader myheader myheader myheader"
+          "mynav mynav mynav mynav mynav mynav"
+          "mymain mymain mymain mymain mymain mycntright"
+          "myfooter myfooter myfooter myfooter myfooter myfooter";
+        height: 100vh;
+        grid-template-rows: 15% 10% 1fr 10%;
+      }
+      .container .content-left {
+       display: none;
+      }
+ }
